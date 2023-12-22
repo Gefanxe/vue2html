@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <link rel="stylesheet" href="./assets/vendor/bootstrap_v5.3.1.min.css">
+  <link rel="stylesheet" href="./assets/css/site.css">
+
+  <title>Vue2</title>
+  <script src="./assets/vendor/jquery_v3.7.0.min.js"></script>
+  <script src="./assets/vendor/bootstrap_v5.3.1.bundle.min.js"></script>
+  <script src="./assets/vendor/vue.min.js"></script>
+  <script src="./assets/vendor/vee-validate-2.2.15/vee-validate.min.js"></script>
+  <script src="./assets/vendor/vee-validate-2.2.15/locale/zh_TW.js"></script>
+  <script src="./assets/js/bsModalComponent.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    {{ message }}
+    <br>
+    <button @click="test">TEST</button>
+    <br>
+    <button @click="onOpenModal">open modal</button>
+    <hr>
+    <form novalidate onsubmit="return false;">
+      <fieldset>
+        <legend>Personalia:</legend>
+        <label for="fname">First name:</label> <input v-model="fname" type="text" id="fname" name="fname"><br><br>
+        <label for="lname">Last name:</label>  <input v-model="lname" type="text" id="lname" name="lname"><br><br>
+        <label for="email">Email:</label>      <input v-model="email" type="email" id="email" name="email"><br><br>
+        <label for="birthday">Birthday:</label><input v-model="birthday" type="date" id="birthday" name="birthday"><br><br>
+        <input type="submit" value="Submit" @click="submit">
+      </fieldset>
+    </form>
+
+    <bs-modal ref="myModal" @@btn-send="onModalOk"></bs-modal>
+  </div>
+  <script src="./assets/js/app.js"></script>
+</body>
+
+</html>
