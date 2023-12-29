@@ -8,7 +8,8 @@ const vue = new Vue({
       fname: '',
       lname: '',
       email: '',
-      birthday: ''
+      birthday: '',
+      selectedValue: ''
     };
   },
   mounted: function () {},

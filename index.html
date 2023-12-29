@@ -15,6 +15,7 @@
   <script src="./assets/vendor/vee-validate-2.2.15/vee-validate.min.js"></script>
   <script src="./assets/vendor/vee-validate-2.2.15/locale/zh_TW.js"></script>
   <script src="./assets/js/bsModalComponent.js"></script>
+  <script src="./assets/js/cSelectComponent.js"></script>
 </head>
 
 <body>
@@ -32,10 +33,12 @@
         <label for="lname">Last name:</label>  <input v-model="lname" type="text" id="lname" name="lname"><br><br>
         <label for="email">Email:</label>      <input v-model="email" type="email" id="email" name="email"><br><br>
         <label for="birthday">Birthday:</label><input v-model="birthday" type="date" id="birthday" name="birthday"><br><br>
+        <c-select title="選擇其中之一" v-model="selectedValue"></c-select><br><br>
         <input type="submit" value="Submit" @click="submit">
       </fieldset>
     </form>
-
+    <hr>
+    selectedValue: {{ selectedValue }}
     <bs-modal ref="myModal" @@btn-send="onModalOk"></bs-modal>
   </div>
   <script src="./assets/js/app.js"></script>
